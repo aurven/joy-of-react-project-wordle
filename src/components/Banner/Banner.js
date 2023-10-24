@@ -1,6 +1,7 @@
 import React from 'react';
+import ResetButton from '../ResetButton';
 
-function Banner({ guessed, answer, numberOfGuesses }) {
+function Banner({ guessed, answer, numberOfGuesses, resetHandler }) {
   const bannerClass = guessed ? 'happy' : 'sad';
 
   return (
@@ -12,6 +13,7 @@ function Banner({ guessed, answer, numberOfGuesses }) {
       ) : (
         <p>Sorry, the correct answer is <strong>{answer}</strong>.</p>
       )}
+      <ResetButton resetHandler={resetHandler} />
     </div>
   );
 }

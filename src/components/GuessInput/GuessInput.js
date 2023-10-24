@@ -2,7 +2,7 @@ import React from 'react';
 
 import Banner from '../Banner';
 
-function GuessInput({ guessesHandler, gameOn, guessed, answer, numberOfGuesses }) {
+function GuessInput({ guessesHandler, resetHandler, gameOn, guessed, answer, numberOfGuesses }) {
   const [userInput, setUserInput] = React.useState('');
 
   return (
@@ -27,7 +27,7 @@ function GuessInput({ guessesHandler, gameOn, guessed, answer, numberOfGuesses }
           setUserInput(newValue);
         }} />
       {!gameOn && (
-        <Banner answer={answer} guessed={guessed} numberOfGuesses={numberOfGuesses} />
+        <Banner answer={answer} guessed={guessed} numberOfGuesses={numberOfGuesses} resetHandler={resetHandler} />
       )}
     </form>
   );
